@@ -1,13 +1,12 @@
 // Import with `import * as Sentry from "@sentry/node"` if you are using ESM
-const Sentry = require("@sentry/node");
-const { nodeProfilingIntegration } = require("@sentry/profiling-node");
+import * as Sentry from "@sentry/node"
+import { nodeProfilingIntegration } from "@sentry/profiling-node";
 
 Sentry.init({
-  dsn: "https://d8f3e630873253fa3d74a2cd593b3ab8@o4508515648929792.ingest.us.sentry.io/4508515652468736",
+  dsn: "",
   integrations: [
     nodeProfilingIntegration(),
     Sentry.mongooseIntegration()
-
   ],
   // Tracing
   tracesSampleRate: 1.0, //  Capture 100% of the transactions
